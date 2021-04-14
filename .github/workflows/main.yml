@@ -13,5 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
+    - name: configure
+    - run: apt install libx11-dev
     - name: make
       run: make all
