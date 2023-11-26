@@ -6,13 +6,7 @@ include config.mk
 SRC = drw.c dwm.c util.c
 OBJ = ${SRC:.c=.o}
 
-all: options dwm-patched
-
-options:
-	@echo dwm-patched build options:
-	@echo "CFLAGS   = ${CFLAGS}"
-	@echo "LDFLAGS  = ${LDFLAGS}"
-	@echo "CC       = ${CC}"
+all: dwm-patched
 
 .c.o:
 	${CC} -c ${CFLAGS} $<
@@ -50,4 +44,4 @@ uninstall:
 		/usr/share/xsessions/dwm-patched.desktop\
 		${DESTDIR}${MANPREFIX}/man1/dwm.1
 
-.PHONY: all options clean dist install uninstall
+.PHONY: all clean dist install uninstall
